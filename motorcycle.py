@@ -9,5 +9,17 @@ class Motorcycle:
         self.is_running = is_running
         self.is_damaged = is_damaged
 
+    def get_mileage(self):
+        pass
+
+    def set_mileage(self, mileage: int):
+        pass
+
+    def set_is_running(self, is_running: bool):
+        pass
+
+    def set_is_damaged(self, is_damaged: bool):
+        pass
+
 
 
