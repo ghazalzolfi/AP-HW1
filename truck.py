@@ -17,3 +17,4 @@ class Truck(Vehicle):
         pass
     def check_load(self):
         pass
+    
