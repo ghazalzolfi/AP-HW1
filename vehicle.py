@@ -1,4 +1,5 @@
-class Vehicle:
+from abc import ABC, abstractmethod
+class Vehicle(ABC):
     def __init__(self, model, year, color, price, weight):
         self.model = model
         self.year = year
@@ -14,14 +15,14 @@ class Vehicle:
 
     def brake(self, final_speed: float):
         self.speed = final_speed
-        print(f"")
+        print(f"braking! Your speed is {self.speed}")
 
-    def turn(self, direction: string):
+    def turn(self, direction: str):
         pass
 
     def honk_horn(self):
-        pass
+        print("Honking!")
 
     def refuel(self, amount: float):
-        fuel += amount
-        print(f"")
+        self.fuel += amount
+        print(f"refueling!")
