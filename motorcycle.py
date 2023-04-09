@@ -21,6 +21,12 @@ class Motorcycle(vehicle):
     def set_is_damaged(self, is_damaged: bool):
         pass
 
+    def start(self):
+        print("Turn on the ignition and press the starter button.")
+
+    def stop(self):
+        print("Press the kill switch to turn off the engine.")
+
     # overriding abstract method
     def get_num_wheels(self):
         print("I have two wheels!")

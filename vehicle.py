@@ -18,9 +18,6 @@ class Vehicle(ABC):
         self.speed = final_speed
         print(f"braking! Your speed is {self.speed}")
 
-    def turn(self, direction: str):
-        pass
-
     def honk_horn(self):
         print("Honking!")
 
@@ -28,6 +25,11 @@ class Vehicle(ABC):
         self.fuel += amount
         print(f"refueling!")
 
+    def start(self):
+        print("Rٍٍeady to go!")
+
+    def stop(self):
+        print("Stopping!")
     @abstractmethod
     def get_num_wheels(self):
         pass
