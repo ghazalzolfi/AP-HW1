@@ -2,7 +2,7 @@ from vehicle import Vehicle
 class Truck(Vehicle):
     def __init__(self, license_plate, fuel_capacity, current_load, transmission_type):
         super().__init__(
-            model, year, color, price, weight
+            model, year, color, price, weight, num_wheels
         )
         self.license_plate = license_plate
         self.fuel_capacity = fuel_capacity
@@ -17,4 +17,8 @@ class Truck(Vehicle):
         pass
     def check_load(self):
         pass
+
+    # overriding abstract method
+    def get_num_wheels(self):
+        print("I may have four to eighteen wheels!")
     

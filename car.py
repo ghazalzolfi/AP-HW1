@@ -2,7 +2,7 @@ from vehicle import Vehicle
 class Car(Vehicle):
     def __init__(self,num_of_doors: int, num_of_wheels: int, max_speed: int, current_gear: int, engine):
         super().__init__(
-            model, year, color, price, weight
+            model, year, color, price, weight, num_wheels
         )
         self.num_of_doors = num_of_doors
         self.num_of_wheels = num_of_wheels
@@ -23,6 +23,10 @@ class Car(Vehicle):
     def change_gears(self, final_gear: int):
         self.current_gear = final_gear
         print(f"Your current gear is {self.current_gear}")
+
+    # overriding abstract method
+    def get_num_wheels(self):
+        print("I have four wheels!")
 
 
 
