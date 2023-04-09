@@ -10,6 +10,6 @@ class Engine:
     def set_cylinders(self):
         pass
     def start(self):
-        pass
+        print("Starting the engine.")
     def stop(self):
-        pass
+        print("Stopping the engine.")
