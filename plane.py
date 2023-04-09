@@ -11,10 +11,10 @@ class Plane(vehicle):
         self.wing = wing
 
     def take_off(self):
-        pass
+        print("The airplane is taking off!")
 
     def land(self):
-        pass
+        print("The airplane is landing!")
 
     def fly_to(self,destination: str):
         pass
