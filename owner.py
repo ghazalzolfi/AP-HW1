@@ -4,16 +4,19 @@ class Owner:
         self.address = address
         self.phone_number = phone_number
         self.email = email
+        self.cars = []
+        self.motorcycles = []
 
     def add_car(self, car: str):
-        pass
+        self.cars.append(car)
+        return self.cars
     def remove_car(self, car: str):
-        pass
-    def get_cars(self):
-        pass
+        self.cars.remove(car)
+        return self.cars
+
     def add_motorcycle(self, motorcycle: str):
-        pass
+        self.motorcycles.append(motorcycle)
+        return self.motorcycles
     def remove_motorcycle(self, motorcycle: str):
-        pass
-    def get_motorcycles(self):
-        pass
+        self.motorcycles.remove(motorcycle)
+        return self.motorcycles
