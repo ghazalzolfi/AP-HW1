@@ -1,6 +1,6 @@
 from abc import ABC, abstractmethod
 class Vehicle(ABC):
-    def __init__(self, model, year, color, price, weight, num_wheels):
+    def __init__(self, model, year, color, price, weight, num_wheels, **kwargs):
         self.model = model
         self.year = year
         self.color = color
@@ -9,7 +9,11 @@ class Vehicle(ABC):
         self.num_wheels = num_wheels
         self.speed = 0
         self.fuel = 0
+        for key, value in kwargs.items():
+            setattr(self, key, value)
 
+    def __str__(self):
+        return f"{self.model} {self.year} {self.color}"
     def accelerate(self, final_speed : float):
         self.speed = final_speed
         print(f"accelerating! Your speed is {self.speed}")

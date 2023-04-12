@@ -1,10 +1,8 @@
 from vehicle import Vehicle
 from engine import Engine
 class Motorcycle(Vehicle):
-    def __init__(self, transmission_type: str, mileage: int, is_running: bool, is_damaged: bool, model, year, price, weight, num_wheels, cylinders, horsepower, fuel_type, displacement):
-        super().__init__(
-            model, year, price, weight , num_wheels
-        )
+    def __init__(self, transmission_type: str, mileage: int, is_running: bool, is_damaged: bool, model, year, price, num_wheels, cylinders, horsepower, fuel_type, displacement):
+        super().__init__(model, year, price, num_wheels)
         self.transmission_type = transmission_type
         self.mileage = mileage
         self.is_running = is_running
@@ -23,9 +21,9 @@ class Motorcycle(Vehicle):
         self.is_damaged = is_damaged
         print(f"is damaged = {self.is_damaged}")
 
+    # overriding the method
     def start(self):
         print("Turn on the ignition and press the starter button.")
-
     def stop(self):
         print("Press the kill switch to turn off the engine.")
 

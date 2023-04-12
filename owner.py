@@ -1,9 +1,11 @@
 class Owner:
-    def __init__(self, name, address, phone_number, email):
+    def __init__(self, name, address, phone_number, email, **kwargs):
         self.name = name
         self.address = address
         self.phone_number = phone_number
         self.email = email
+        for key, value in kwargs.items():
+            setattr(self, key, value)
         self.cars = []
         self.motorcycles = []
 
