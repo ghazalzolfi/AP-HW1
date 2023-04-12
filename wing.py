@@ -7,14 +7,15 @@ class Wing:
         self.thickness = thickness
         self.surface_area = surface_area
         self.material = material
+        self.flaps_position = None
 
     def calculate_surface_area(self):
-        pass
+        return self.length * self.width
 
-    def calculate_wing_loading(self,weight):
-        pass
+    def calculate_wing_loading(self):
+        return self.weight / self.surface_area
     def deploy_flaps(self):
-        pass
+        self.flaps_position = "deployed"
 
     def retract_flaps(self):
-        pass
+        self.flaps_position = "retracted"
