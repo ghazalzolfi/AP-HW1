@@ -1,5 +1,5 @@
 from vehicle import Vehicle
-class Motorcycle(vehicle):
+class Motorcycle(Vehicle):
     def __init__(self, transmission_type: str, mileage: int, is_running: bool, is_damaged: bool):
         super().__init__(
             model, year, color, price, weight , num_wheels
@@ -9,17 +9,17 @@ class Motorcycle(vehicle):
         self.is_running = is_running
         self.is_damaged = is_damaged
 
-    def get_mileage(self):
-        pass
-
     def set_mileage(self, mileage: int):
-        pass
+        self.mileage += mileage
+        return self.mileage
 
     def set_is_running(self, is_running: bool):
-        pass
+        self.is_running = is_running
+        print(f"is runing = {self.is_running}")
 
     def set_is_damaged(self, is_damaged: bool):
-        pass
+        self.is_damaged = is_damaged
+        print(f"is damaged = {self.is_damaged}")
 
     def start(self):
         print("Turn on the ignition and press the starter button.")
