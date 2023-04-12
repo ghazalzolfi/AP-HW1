@@ -6,9 +6,9 @@ class Engine:
         self.displacement = displacement
 
     def get_cylinders(self):
-        pass
-    def set_cylinders(self):
-        pass
+        return self.cylinders
+    def set_cylinders(self, cylinders):
+        self.cylinders = cylinders
     def start(self):
         print("Starting the engine.")
     def stop(self):
