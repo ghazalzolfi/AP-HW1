@@ -17,10 +17,10 @@ class Plane(vehicle):
         print("The airplane is landing!")
 
     def fly_to(self,destination: str):
-        pass
+        print(f"The plane is flying to {destination}")
 
     def get_current_location(self):
-        pass
+        return self.current_location
 
     # overriding abstract method
     def get_num_wheels(self):
