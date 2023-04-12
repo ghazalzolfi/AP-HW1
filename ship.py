@@ -1,9 +1,7 @@
 from vehicle import Vehicle
 class Ship(Vehicle):
-    def __init__(self, captain, fuel_efficiency, is_moving, safety_rating):
-        super().__init__(
-            model, year, color, price, weight, num_wheels
-        )
+    def __init__(self, captain, fuel_efficiency, is_moving, safety_rating, model, year, color, price, weight, num_wheels):
+        super().__init__(model, year, color, price, weight, num_wheels)
         self.captain = captain
         self.fuel_efficiency = fuel_efficiency
         self.is_moving = is_moving

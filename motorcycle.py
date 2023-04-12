@@ -1,13 +1,15 @@
 from vehicle import Vehicle
+from engine import Engine
 class Motorcycle(Vehicle):
-    def __init__(self, transmission_type: str, mileage: int, is_running: bool, is_damaged: bool):
+    def __init__(self, transmission_type: str, mileage: int, is_running: bool, is_damaged: bool, model, year, price, weight, num_wheels, cylinders, horsepower, fuel_type, displacement):
         super().__init__(
-            model, year, color, price, weight , num_wheels
+            model, year, price, weight , num_wheels
         )
         self.transmission_type = transmission_type
         self.mileage = mileage
         self.is_running = is_running
         self.is_damaged = is_damaged
+        self.engine = Engine(cylinders, horsepower, fuel_type, displacement)
 
     def set_mileage(self, mileage: int):
         self.mileage += mileage

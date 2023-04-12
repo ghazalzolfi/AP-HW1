@@ -1,6 +1,6 @@
 from vehicle import Vehicle
 class Truck(Vehicle):
-    def __init__(self, license_plate: str, fuel_capacity: float, current_load: float, transmission_type: str):
+    def __init__(self, license_plate: str, fuel_capacity: float, current_load: float, transmission_type: str, model, year, color, price, weight, num_wheels):
         super().__init__(
             model, year, color, price, weight, num_wheels
         )
