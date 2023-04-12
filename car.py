@@ -8,15 +8,18 @@ class Car(Vehicle):
         self.max_speed = max_speed
         self.current_gear = current_gear
         self.engine = engine
+        self.door_lock = None
 
 
     def start_engine(self):
         print(f"Your {self} is ready to go!")
 
     def lock_doors(self):
+        self.door_lock = True
         print(f"{self}'s doors are locked!")
 
     def unlock_doors(self):
+        self.door_lock = False
         print(f"{self}'s doors are unlocked!")
 
     def change_gears(self, final_gear: int):
