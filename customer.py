@@ -12,4 +12,4 @@ class Customer:
         print("Reservation cancled!")
 
     def view_transactions(self):
-        pass
+        print("Here is your transactions!")
