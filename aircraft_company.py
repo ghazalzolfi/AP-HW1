@@ -1,3 +1,4 @@
+from plane import Plane
 class AircraftCompany:
     def __init__(self, name, founded_year, address: str, planes: list):
         self.name = name
@@ -5,11 +6,11 @@ class AircraftCompany:
         self.address = address
         self.planes = planes
 
-    def add_plane(self, plane):
+    def add_plane(self, plane: Plane):
         self.planes.append(plane)
         print(f"{plane} added!")
 
-    def remove_plane(self, plane):
+    def remove_plane(self, plane: Plane):
         self.planes.remove(plane)
         print(f"{plane} removed!")
 

@@ -1,4 +1,5 @@
 from vehicle import Vehicle
+from wing import Wing
 class Plane(Vehicle):
     def __int__(self,passenger_capacity: int, is_flying: bool, current_location: str, aircraft_company: float, wing, model, year, price, weight, num_wheels):
         super().__init__(model, year, price, weight, num_wheels)
@@ -6,7 +7,7 @@ class Plane(Vehicle):
         self.is_flying = is_flying
         self.current_location = current_location
         self.aircraft_company = aircraft_company
-        self.wing = wing
+        self.wing = Wing()
 
     def take_off(self):
         print("The airplane is taking off!")
@@ -16,6 +17,9 @@ class Plane(Vehicle):
 
     def fly_to(self,destination: str):
         print(f"The plane is flying to {destination}")
+
+    def calculate_wing_loading(self):
+        return self.weight / self.wing.calculate_surface_area()
 
     def get_current_location(self):
         return self.current_location
