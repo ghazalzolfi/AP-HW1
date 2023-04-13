@@ -1,14 +1,16 @@
 from vehicle import Vehicle
 class Ship(Vehicle):
-    def __init__(self, captain, fuel_efficiency, is_moving, safety_rating, model, year, price, weight, num_wheels):
-        super().__init__(model, year, price, weight, num_wheels)
+    def __init__(self, captain: str, fuel_efficiency: float, is_moving: bool, safety_rating: float, model, year, num_wheels):
+        super().__init__(model, year, num_wheels)
         self.captain = captain
         self.fuel_efficiency = fuel_efficiency
         self.is_moving = is_moving
         self.safety_rating = safety_rating
 
+    # using attributes of parent class
     def get_safty_rating(self):
-        return self.safety_rating
+        print(f"{self.model} : {self.year} : {self.safety_rating}")
+
     def set_safty_rating(self, safety_rating):
         self.safety_rating = safety_rating
         return self.safety_rating

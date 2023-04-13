@@ -1,8 +1,9 @@
 from vehicle import Vehicle
 from wing import Wing
 class Plane(Vehicle):
-    def __int__(self,passenger_capacity: int, is_flying: bool, current_location: str, aircraft_company: float, wing, model, year, price, weight, num_wheels):
+    def __int__(self,passenger_capacity: int, is_flying: bool, current_location: str, aircraft_company: float, model, year, price, weight, num_wheels):
         super().__init__(model, year, price, weight, num_wheels)
+        # define protected(passenger_capacity) and private(is_flying, current_location) attributes
         self._passenger_capacity = passenger_capacity
         self.__is_flying = is_flying
         self.__current_location = current_location

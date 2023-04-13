@@ -7,6 +7,7 @@ class Motorcycle(Vehicle):
         self.mileage = mileage
         self.is_running = is_running
         self.is_damaged = is_damaged
+        # composition
         self.engine = Engine(cylinders, horsepower, fuel_type, displacement)
 
     def set_mileage(self, mileage: int):
@@ -21,7 +22,7 @@ class Motorcycle(Vehicle):
         self.is_damaged = is_damaged
         print(f"is damaged = {self.is_damaged}")
 
-    # overriding the method
+    # polymorphism (defining methods in child class)
     def start(self):
         print("Turn on the ignition and press the starter button.")
     def stop(self):

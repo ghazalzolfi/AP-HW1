@@ -1,6 +1,6 @@
 from abc import ABC, abstractmethod
 class Vehicle(ABC):
-    def __init__(self, model, year, color, price, weight, num_wheels, **kwargs):
+    def __init__(self, model: str, year: int, color: str, price: float, weight: float, num_wheels: int, **kwargs):
         self.model = model
         self.year = year
         self.color = color
@@ -9,6 +9,7 @@ class Vehicle(ABC):
         self.num_wheels = num_wheels
         self.speed = 0
         self.fuel = 0
+        #the constructor accepts any additional keyword arguments.
         for key, value in kwargs.items():
             setattr(self, key, value)
 
@@ -29,11 +30,13 @@ class Vehicle(ABC):
         self.fuel += amount
         print(f"refueling!")
 
+    # polymorphism (defining methods in parent class)
     def start(self):
         print("Rٍٍeady to go!")
-
     def stop(self):
         print("Stopping!")
+
+    #defining abstract method in parent class
     @abstractmethod
     def get_num_wheels(self):
         pass
