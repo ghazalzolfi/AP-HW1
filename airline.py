@@ -1,4 +1,5 @@
 from flight import Flight
+from plane import Plane
 class airline:
     def __init__(self, name, country, code, flights: list, employees):
         self.name = name
@@ -6,6 +7,10 @@ class airline:
         self.code = code
         self.flights = flights
         self.employees = employees
+        # aggregation
+        self.plane = Plane()
+        # composition
+        self.flight = Flight()
 
     def add_flight(self, flight: Flight):
         self.flights.append(flight)

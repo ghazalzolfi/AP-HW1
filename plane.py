@@ -8,6 +8,7 @@ class Plane(Vehicle):
         self.__is_flying = is_flying
         self.__current_location = current_location
         self.aircraft_company = aircraft_company
+        # aggregation
         self.wing = Wing()
 
     def take_off(self):
@@ -19,6 +20,7 @@ class Plane(Vehicle):
     def fly_to(self,destination: str):
         print(f"The plane is flying to {destination}")
 
+    # aggregation (using a method of wing class)
     def calculate_wing_loading(self):
         return self.weight / self.wing.calculate_surface_area()
 

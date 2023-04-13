@@ -1,5 +1,6 @@
 class Passenger:
     def __init__(self, name, pass_num, birthdate, email):
+        # define protected attributes
         self._name = name
         self._pass_num = pass_num
         self._birthdate = birthdate

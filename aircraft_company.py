@@ -5,11 +5,11 @@ class AircraftCompany:
         self.founded_year = founded_year
         self.address = address
         self.planes = planes
-
+        # aggregation
+        self.plane = Plane()
     def add_plane(self, plane: Plane):
         self.planes.append(plane)
         print(f"{plane} added!")
-
     def remove_plane(self, plane: Plane):
         self.planes.remove(plane)
         print(f"{plane} removed!")
