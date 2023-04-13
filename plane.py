@@ -3,9 +3,9 @@ from wing import Wing
 class Plane(Vehicle):
     def __int__(self,passenger_capacity: int, is_flying: bool, current_location: str, aircraft_company: float, wing, model, year, price, weight, num_wheels):
         super().__init__(model, year, price, weight, num_wheels)
-        self.passenger_capacity = passenger_capacity
-        self.is_flying = is_flying
-        self.current_location = current_location
+        self._passenger_capacity = passenger_capacity
+        self.__is_flying = is_flying
+        self.__current_location = current_location
         self.aircraft_company = aircraft_company
         self.wing = Wing()
 

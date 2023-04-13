@@ -18,7 +18,7 @@ class Flight:
         print(f"{passenger} was remove from passengers!")
 
     def get_available_seats(self):
-        available_seats_num = self.plane.passenger_capacity - len(self.passengers)
+        available_seats_num = self.plane._passenger_capacity - len(self.passengers)
         print(f"There are {available_seats_num} empty seats!")
 
     def get_flight_duration(self):
