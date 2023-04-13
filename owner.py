@@ -6,10 +6,14 @@ class Owner:
         self.address = address
         self.phone_number = phone_number
         self.email = email
+        # the constructor accepts any additional keyword arguments.
         for key, value in kwargs.items():
             setattr(self, key, value)
         self.cars = []
         self.motorcycles = []
+        # aggregation
+        self.car = Car()
+        self.motorcycle = Motorcycle()
 
     def add_car(self, car: Car):
         self.cars.append(car)
