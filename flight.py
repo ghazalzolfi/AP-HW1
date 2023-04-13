@@ -1,5 +1,5 @@
 from plane import Plane
-class flight:
+class Flight:
     def __init__(self, number, airplane_type, departure_time, arrival_time, status, passengers: list, passenger_capacity):
         self.number = number
         self.airplane_type = airplane_type
