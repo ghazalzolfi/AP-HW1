@@ -1,20 +1,24 @@
 from plane import Plane
+from passenger import Passenger
 class Flight:
-    def __init__(self, number, airplane_type, departure_time, arrival_time, status, passengers: list, passenger_capacity):
+    def __init__(self, number, airplane_type, departure_time, arrival_time, status, list_passengers: list, passenger_capacity, email):
         self.number = number
         self.airplane_type = airplane_type
         self.departure_time = departure_time
         self.arrival_time = arrival_time
         self.status = status
-        self.passengers = passengers
+        self.list_passengers = list_passengers
         self.plane = Plane(passenger_capacity)
+        self.passenger = Passenger(email)
 
     def add_passengers(self, passenger):
-        self.passengers.append(passenger)
+        self.list_passengers.append(passenger)
+        self.passenger.send_email()
         print(f"{passenger} was added to passengers!")
 
     def remove_passengers(self, passenger):
-        self.passengers.remove(passenger)
+        self.list_passengers.remove(passenger)
+        self.passenger.send_email()
         print(f"{passenger} was remove from passengers!")
 
     def get_available_seats(self):
