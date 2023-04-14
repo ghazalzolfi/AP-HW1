@@ -1,13 +1,17 @@
 from vehicle import Vehicle
 from engine import Engine
+
+
 class Car(Vehicle):
-    def __init__(self, num_of_doors: int, max_speed: int, current_gear: int, model, year, price, num_wheels, cylinders, horsepower, displacement):
-        super.__init__(model, year, price, num_wheels)
+    def __init__(self, num_of_doors: int, max_speed: int, current_gear: int,
+                 model, year, color, price, weight, num_wheels,
+                 engine: Engine):
+        super().__init__(model, year, color, price, weight, num_wheels)
         self.num_of_doors = num_of_doors
         self.max_speed = max_speed
         self.current_gear = current_gear
-        #composition
-        self.engine = Engine(cylinders, horsepower, displacement)
+#       composition
+        self.engine = engine
         self.door_lock = None
 
     def get_price(self):
@@ -30,18 +34,13 @@ class Car(Vehicle):
         self.current_gear = final_gear
         print(f"Your current gear is {self.current_gear}")
 
-    #polymorphism (defining methods in child class)
+#   polymorphism (defining methods in child class)
     def start(self):
         print("Insert key, turn ignition, and press gas pedal to start.")
+
     def stop(self):
         print("Put car in park, turn off ignition, and remove key.")
 
-    # overriding abstract method
+#   overriding abstract method
     def get_num_wheels(self):
         print("I have four wheels!")
-
-
-
-
-
-

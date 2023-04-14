@@ -7,9 +7,14 @@ class Engine:
 
     def get_cylinders(self):
         return self.cylinders
+
     def set_cylinders(self, cylinders):
         self.cylinders = cylinders
-    def start(self):
+
+    @staticmethod
+    def start():
         print("Starting the engine.")
-    def stop(self):
+
+    @staticmethod
+    def stop():
         print("Stopping the engine.")

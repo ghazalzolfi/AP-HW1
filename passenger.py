@@ -10,7 +10,8 @@ class Passenger:
     def get_detail(self):
         print(f"passenger name : {self._name} and passenger passport number : {self._pass_num}")
 
-    def send_email(self):
+    @staticmethod
+    def send_email():
         print("Click to see your reservation status! ")
 
     def check_in(self):

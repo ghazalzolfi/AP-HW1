@@ -1,7 +1,11 @@
 from vehicle import Vehicle
 from wing import Wing
+
+
 class Plane(Vehicle):
-    def __int__(self,passenger_capacity: int, is_flying: bool, current_location: str, aircraft_company: float, model, year, price, weight, num_wheels):
+    def __int__(self, passenger_capacity: int, is_flying: bool, current_location: str, aircraft_company: float,
+                model, year, price, weight, num_wheels,
+                length, width, thickness, material):
         super().__init__(model, year, price, weight, num_wheels)
         # define protected(passenger_capacity) and private(is_flying, current_location) attributes
         self._passenger_capacity = passenger_capacity
@@ -9,15 +13,18 @@ class Plane(Vehicle):
         self.__current_location = current_location
         self.aircraft_company = aircraft_company
         # aggregation
-        self.wing = Wing()
+        self.wing = Wing(length, width, thickness, material)
 
-    def take_off(self):
+    @staticmethod
+    def take_off():
         print("The airplane is taking off!")
 
-    def land(self):
+    @staticmethod
+    def land():
         print("The airplane is landing!")
 
-    def fly_to(self,destination: str):
+    @staticmethod
+    def fly_to(destination: str):
         print(f"The plane is flying to {destination}")
 
     # aggregation (using a method of wing class)
@@ -30,4 +37,3 @@ class Plane(Vehicle):
     # overriding abstract method
     def get_num_wheels(self):
         print("I have three wheels!")
-

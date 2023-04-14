@@ -1,4 +1,5 @@
 from abc import ABC, abstractmethod
+# abstraction
 
 
 class Vehicle(ABC):
@@ -36,10 +37,10 @@ class Vehicle(ABC):
 
 #   polymorphism (defining methods in parent class)
     def start(self):
-        print("Rٍٍeady to go!")
+        pass
 
     def stop(self):
-        print("Stopping!")
+        pass
 
 #   defining abstract method in parent class
     @abstractmethod

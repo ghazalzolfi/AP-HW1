@@ -1,5 +1,7 @@
 from plane import Plane
 from passenger import Passenger
+
+
 class Flight:
     def __init__(self, number, airplane_type, departure_time, arrival_time, status, list_passengers: list, passenger_capacity, email):
         self.number = number
@@ -29,4 +31,4 @@ class Flight:
 
     def get_flight_duration(self):
         flight_duration = self.arrival_time - self.departure_time
-        return  flight_duration
+        return flight_duration
