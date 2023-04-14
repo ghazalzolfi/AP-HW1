@@ -33,12 +33,31 @@ motorcycle class:
         print("Press the kill switch to turn off the engine.")
 
 با تعریف کلاس موتور و استفاده از آن در کلاس‌های موتور و ماشین از مفهوم "کامپوزیشن" استفاده کردم. این رابطه برای موتور ماشین و خود کلاس ماشین به این صورت است که با تعریف کلاس ماشین، موتور آن را هم به عنوان ورودی دریافت می‌کنیم. و دو متود استارت موتور در کلاس ماشین زمانی که ماشین استارت می‌خورد، متود استارت موتور ماشین نیز فراخوانی می‌شود. 
+
 car class:
 #composition (using method of engine class)
 
     def start_engine(self):
         self.engine.start()
         print(f"Your {self} is ready to go!")
+با تعریف کلاس اونر و تعریف دو لیست یکی برای ماشین‌های آن فرد و یکی برای موتورهای او، از متودی برای اضافه و کم کردن شی موتور و شی ماشین به لیست‌های مورد نظر استفاده می‌کنیم. در اینحا از مفهوم "اگریگیشن" استفاده کرده‌ایم. در اینجا برای حذف کردن یک شی ماشین و یا شی موتور، یک "متود پرایوت" برای پیدا کردن ماشین موردنظر، تعریف می‌کنیم که فقط در همین کلاس کاربرد دارد. و با فراخوانی این تابع می‌توانیم شی ماشین مورد نظر را پیدا کرده و از لیست حذف کنیم.
 
+owner class:
 
-با تعریف کلاس اونر و تعریف دو لیست یکی برای ماشین‌های آن فرد و یکی برای موتورهای او
+    def add_car(self, car: Car):
+        self.cars.append(car)
+        return self.cars
+
+    def __find_car(self, car_model):
+        founded_car = None
+        for car in self.cars:
+            if car.model == car_model:
+                founded_car = car
+        return founded_car
+
+    def remove_car(self, car_model):
+        founded_car = self.__find_car(car_model)
+        if founded_car:
+            self.cars.remove(founded_car)
+        return founded_car
+
