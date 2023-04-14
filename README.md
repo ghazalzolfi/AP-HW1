@@ -61,3 +61,14 @@ owner class:
             self.cars.remove(founded_car)
         return founded_car
 
+در کلاس رنتال برای اجاره دادن ماشین‌ها می دانیم که هرقرار دادی برای اجاره یک مشتری و یک ماشین برای اجاره دادن را شامل می‌شود.
+
+rental class:
+#aggregation  and composition (using customer and car class attributes)
+
+    def extend_rental(self, new_return_date):
+        self.return_date = new_return_date
+        print(f"The rental for {self.car.model}extended for {self.customer.name} : {self.customer.customer_ID}!")
+
+    def cancel_rental(self):
+        print(f"Your rental canceled for {self.customer.name} : {self.customer.customer_ID}!")

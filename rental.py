@@ -12,13 +12,13 @@ class Rental:
         self.car = car
         self.customer = customer
 
-    # aggregation (using customer class attributes)
+    # aggregation  and composition (using customer and car class attributes)
     def extend_rental(self, new_return_date):
         self.return_date = new_return_date
-        print(f"The rental for {self.car.model}extended for {self.customer._name} : {self.customer._customer_ID}!")
+        print(f"The rental for {self.car.model}extended for {self.customer.name} : {self.customer.customer_ID}!")
 
     def cancel_rental(self):
-        print(f"Your rental canceled for {self.customer._name} : {self.customer._customer_ID}!")
+        print(f"Your rental canceled for {self.customer.name} : {self.customer.customer_ID}!")
 
     def calculate_late_fee(self, new_return_date):
         self.total_fee += (new_return_date - self.return_date)*self.late_fee
