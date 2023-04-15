@@ -17,3 +17,7 @@ class Passenger:
     def check_in(self):
         self.checked_in = True
         print(f"{self._name} was checked in!")
+
+    # Encapsulation
+    def get_name(self):
+        return self._name

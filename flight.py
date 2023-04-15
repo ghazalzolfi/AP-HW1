@@ -17,10 +17,11 @@ class Flight:
         passenger.send_email()
         print(f"{passenger} was added to passengers!")
 
+    # Encapsulation
     def __find_passenger(self, passenger_name):
         founded_passenger = None
         for passenger in self.list_passengers:
-            if passenger._name == passenger_name:
+            if passenger.get_name() == passenger_name:
                 founded_passenger = passenger
         return founded_passenger
 
@@ -31,8 +32,9 @@ class Flight:
         print(f"{passenger_name} was remove from passengers!")
 
     # aggregation (using attribute of plane class)
+    # Encapsulation
     def get_available_seats(self, plane: Plane):
-        available_seats_num = plane._passenger_capacity - len(self.list_passengers)
+        available_seats_num = plane.get_passenger_capcity() - len(self.list_passengers)
         print(f"There are {available_seats_num} empty seats!")
 
     def get_flight_duration(self):

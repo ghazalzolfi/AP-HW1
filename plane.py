@@ -27,6 +27,10 @@ class Plane(Vehicle):
     def fly_to(destination: str):
         print(f"The plane is flying to {destination}")
 
+    # Encapsulation
+    def get_passenger_capcity(self):
+        return self._passenger_capacity
+
     # aggregation (using a method of wing class)
     def calculate_wing_loading(self):
         return self.weight / self.wing.calculate_surface_area()
