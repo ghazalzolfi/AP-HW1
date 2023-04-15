@@ -17,10 +17,18 @@ class Flight:
         passenger.send_email()
         print(f"{passenger} was added to passengers!")
 
-    def remove_passengers(self, passenger: Passenger):
-        self.list_passengers.remove(passenger)
-        passenger.send_email()
-        print(f"{passenger} was remove from passengers!")
+    def __find_passenger(self, passenger_name):
+        founded_passenger = None
+        for passenger in self.list_passengers:
+            if passenger._name == passenger_name:
+                founded_passenger = passenger
+        return founded_passenger
+
+    def remove_passengers(self, passenger_name):
+        founded_passenger = self.__find_passenger(passenger_name)
+        if founded_passenger:
+            self.list_passengers.remove(passenger_name)
+        print(f"{passenger_name} was remove from passengers!")
 
     # aggregation (using attribute of plane class)
     def get_available_seats(self, plane: Plane):
