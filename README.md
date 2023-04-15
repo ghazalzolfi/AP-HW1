@@ -73,6 +73,37 @@ rental class:
     def cancel_rental(self):
         print(f"Your rental canceled for {self.customer.name} : {self.customer.customer_ID}!")
 
+
+ در کلاس هواپیما با تعریف متغیر پسنجر کپسیتی به صورت پروتکتد با به کار بردن مفهوم "انکپسولیشن"، برای استفاده از این متغیر از متود گت پسنجر کپسیتی استفاده کردم.
+ 
+plane class:
+#Encapsulation
+
+    def get_passenger_capcity(self):
+        return self._passenger_capacity
+
+flight class:
+
+    def get_available_seats(self, plane: Plane):
+        available_seats_num = plane.get_passenger_capcity() - len(self.list_passengers)
+        print(f"There are {available_seats_num} empty seats!")
+
+passenger class:
+#Encapsulation
+
+    def get_name(self):
+        return self._name
+
+flight class:
+
+    def __find_passenger(self, passenger_name):
+        founded_passenger = None
+        for passenger in self.list_passengers:
+            if passenger.get_name() == passenger_name:
+                founded_passenger = passenger
+        return founded_passenger
+
+
 در کلاس هواپیما با استفاده از مفهوم "اگریگیشن" از کلاس بال استفاده کردیم. و برای محاسبه‌ی لود بال هواپیما از متود محاسبه‌ی مساحت بهره بردیم.
 
 plane class:
@@ -94,7 +125,7 @@ flight class:
     def __find_passenger(self, passenger_name):
         founded_passenger = None
         for passenger in self.list_passengers:
-            if passenger._name == passenger_name:
+            if passenger.get_name() == passenger_name:
                 founded_passenger = passenger
         return founded_passenger
 
@@ -103,4 +134,3 @@ flight class:
         if founded_passenger:
             self.list_passengers.remove(passenger_name)
         print(f"{passenger_name} was remove from passengers!")
-
