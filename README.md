@@ -72,3 +72,35 @@ rental class:
 
     def cancel_rental(self):
         print(f"Your rental canceled for {self.customer.name} : {self.customer.customer_ID}!")
+
+در کلاس هواپیما با استفاده از مفهوم "اگریگیشن" از کلاس بال استفاده کردیم. و برای محاسبه‌ی لود بال هواپیما از متود محاسبه‌ی مساحت بهره بردیم.
+
+plane class:
+#aggregation (using a method of wing class)
+
+    def calculate_wing_loading(self):
+        return self.weight / self.wing.calculate_surface_area()
+
+در کلاس ایرلاین برای متود اضافه و حذف کردن پرواز، در کلاس شرکت هواپیمایی برای اضافه یا حذف کردن هواپیما و در کلاس فلایت برای اضافه و یا حذف کردن مسافر به حالتی مشابه هم عمل می‌کنیم. برای مثال، به این صورت:
+
+flight class:
+#aggregation (using method of passenger class)
+
+    def add_passengers(self, passenger: Passenger):
+        self.list_passengers.append(passenger)
+        passenger.send_email()
+        print(f"{passenger} was added to passengers!")
+
+    def __find_passenger(self, passenger_name):
+        founded_passenger = None
+        for passenger in self.list_passengers:
+            if passenger._name == passenger_name:
+                founded_passenger = passenger
+        return founded_passenger
+
+    def remove_passengers(self, passenger_name):
+        founded_passenger = self.__find_passenger(passenger_name)
+        if founded_passenger:
+            self.list_passengers.remove(passenger_name)
+        print(f"{passenger_name} was remove from passengers!")
+
