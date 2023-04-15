@@ -1,7 +1,7 @@
 class Customer:
-    def __init__(self, customer_ID, name, address, phone_number, license_num, **kwargs):
+    def __init__(self, customer_id, name, address, phone_number, license_num, **kwargs):
         # define protected and private attributes
-        self.customer_ID = customer_ID
+        self.customer_id = customer_id
         self.name = name
         self.__address = address
         self.__phone_number = phone_number
@@ -18,5 +18,6 @@ class Customer:
     def cancel_reservation():
         print("Reservation cancled!")
 
-    def view_transactions(self):
+    @staticmethod
+    def view_transactions():
         print("Here is your transactions!")

@@ -32,7 +32,7 @@ class Plane(Vehicle):
         return self.weight / self.wing.calculate_surface_area()
 
     def get_current_location(self):
-        return self.current_location
+        print(f"Plane's current location is {self.__current_location}")
 
     # overriding abstract method
     def get_num_wheels(self):
