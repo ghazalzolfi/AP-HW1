@@ -11,9 +11,8 @@ This exercise focuses on two key areas: mastering Object-Oriented Programming (O
      - Polymorphism
      - Composition
      - Aggregation
-   - A minimum of 15 classes, each with at least 5 variables and 5 methods.
 
-2. **Working with Git**:
+2. Working with Git:
    - Create a Git repository and structure the project using branches.
    - Commit meaningful changes for the class diagram and code implementation.
    - Merge the branches while retaining the original ones.
